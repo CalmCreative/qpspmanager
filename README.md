@@ -19,16 +19,16 @@ CC
 
 ## Features
 
-Unpacks PBP files and selects automatically the icon and background files from the source file.
-Extracts the program name included in the PBP file and sets it as default output directory.
-Extracts the ELF of the PBP file and packs a fake PBP file without the ELF for showing in the menu of the PSP.
-Allows to select custom icon and background files to use in the menu.
-Allows to select custom video and music files to use in the menu.
-Allows to select the output directory on the PSP and the actual PSP directory, which is saved as an option for further usages, so you only have to configure it once (as long as the PSP directory does not change).
-Provides support for backup the savegames on the PSP to the computer and viceversa.
-Allows to compress ISO files to CISO files.
-Allows to expand CISO files to ISO files.
-Manages the ISO/CISO files on the PSP, allowing to delete them and copy them compressed or non compressed to the PSP.
+- Unpacks PBP files and selects automatically the icon and background files from the source file.
+- Extracts the program name included in the PBP file and sets it as default output directory.
+- Extracts the ELF of the PBP file and packs a fake PBP file without the ELF for showing in the menu of the PSP.
+- Allows to select custom icon and background files to use in the menu.
+- Allows to select custom video and music files to use in the menu.
+- Allows to select the output directory on the PSP and the actual PSP directory, which is saved as an option for further usages, so you only have to configure it once (as long as the PSP directory does not change).
+- Provides support for backup the savegames on the PSP to the computer and viceversa.
+- Allows to compress ISO files to CISO files.
+- Allows to expand CISO files to ISO files.
+- Manages the ISO/CISO files on the PSP, allowing to delete them and copy them compressed or non compressed to the PSP.
 
 # Installation
 QT toolkit, g++ and zlib required.
