@@ -5,6 +5,18 @@ QPSPManager automates this process to make it a simple task to the end user, who
 
 QPBPManager also allows the user to backup the savegames to the computer and copy those savegames later to the PSP.
 
+# Changes
+
+Hi there! I'm just a guy that saw this ancient project and thought 'yeah, this is awesome but it could do with some work'.
+
+What you see here was originally built to target qt4. As such, some functions (such as the applications manager) have functionality that is largely broken when targetting a greater version of qt. However, with a bit of work I managed to develop some light fixes that reinstate that functionality and also allow it to compile for newer versions of qt.
+
+The downside to this is that video encoding *is broken* currently. As long as you do not desire to encode video, this little 'rebirth' should work fine. Compile it as you would normally, and all should be well.
+
+Have fun.
+
+CC
+
 ## Features
 
 Unpacks PBP files and selects automatically the icon and background files from the source file.
@@ -25,5 +37,5 @@ QT toolkit, g++ and zlib required.
     make
     make install
 
-# Website
+# Legacy Website
 http://qpspmanager.sf.net
