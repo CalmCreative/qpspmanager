@@ -42,7 +42,6 @@ void VideoJobManager::run()
         if (m_stop)
         {
             qDebug() << "run killed";
-            emit finished();
             break;
         }
         
@@ -67,13 +66,11 @@ void VideoJobManager::run()
             qDebug() << QString("Error encoding item %1").arg(i);
             FileManager::deleteFile(v.getOutputFile());
             m_success = false;
-            emit finished();
             break;
         }
         
     }
     qDebug() << "run ended";
-    emit finished();
 }
 
 

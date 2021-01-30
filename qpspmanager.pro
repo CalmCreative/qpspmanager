@@ -10,7 +10,7 @@ OBJECTS_DIR = obj
 MOC_DIR = obj
 RCC_DIR = resources
 UI_DIR = ui
-CONFIG += release x86 ppc
+CONFIG += release x86 x86_64 ppc
 ICON = qpspmanager.icns
 
 # Input
@@ -97,3 +97,4 @@ win32 {
 RESOURCES += src/qpspmanager.qrc
 
 LIBS += -lz 
+QT += widgets

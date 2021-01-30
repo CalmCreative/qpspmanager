@@ -69,7 +69,7 @@ void ApplicationsManager::scanPSP()
     {
     		initPSPDir();
         QString PSPDir = m_options.getPSPDir();
-        QString PSPAppDir = getAppDirectory(PSPDir, m_options.getFirmware());
+        QString PSPAppDir = m_options.getPSPDir() + "/" + "PSP" + "/" "GAME" + "/";
         scanDir(PSPAppDir, m_appPSPList);
         emit PSPDirChanged();
     }
@@ -148,11 +148,11 @@ QString ApplicationsManager::getAppDirectory(QString PSPDirectory, int firmware)
     
     if (firmware == FIRMWARE_3XX)
     {
-        appDir = "game150";
+        appDir = "GAME";
     }
     else
     {
-        appDir = "game";
+        appDir = "GAME150";
     }
     
     QDir directory(PSPDirectory);
@@ -177,9 +177,8 @@ QString ApplicationsManager::getAppDirectory(QString PSPDirectory, int firmware)
         }
     }
     
-    return "";
+    return "PSP/GAME";
 }
-
 
 bool ApplicationsManager::findApp(QList<PSPApplication> &list, QString path)
 {
@@ -242,20 +241,20 @@ void ApplicationsManager::initPSPDir()
                 for (int i = 0; i < pspList.size(); ++i) 
                 {
                 		qDebug() << pspList.at(i).fileName();
-                    if (dirList.at(i).fileName().toLower() == "game150")
+                    if (dirList.at(i).fileName().toLower() == "game")
                     {
                         return;
                     }
                 }
                 //Applications dir not found, we create it
-                if (!pspDir.mkdir("GAME150"))
+                if (!pspDir.mkdir("GAME"))
                 {
                     //TODO: exception
                 }
             }
             return;
         }
-        appDir.mkpath("PSP/GAME150");
+        appDir.mkpath("PSP/GAME");
     }
 }
 
@@ -403,7 +402,9 @@ void ApplicationsManager::moveApplicationsToPSP(QList<int> list)
         {
             QDir sourceDir(m_appComputerList.at(list.at(i)).getPath());
             sourceDir.cdUp();
-            QDir destDir(getAppDirectory(m_options.getPSPDir(), m_options.getFirmware()) + "/" + sourceDir.dirName());
+            QDir destDir(m_options.getPSPDir() + "/" + "PSP" + "/" "GAME" + "/" + sourceDir.dirName());
+            //QDir destDir("~/Documents/testDir", "/" + sourceDir.dirName());
+            qDebug() << "Destination Directory:" << destDir << "combined result" << m_options.getFirmware();
             if (destDir.exists())
             {
                 if (m_view.askAppOverwrite(m_appComputerList.at(list.at(i)).getName()))
